@@ -25,7 +25,7 @@ server.post('api/messages', connector.listen());
 bot.dialog('/',[  // Primer dialogo o dialogo raìz, se crea dentro del bot
     function(session,result,next){
         if(!session.userData.nombre){// preguntar si sabemos el nombre
-        builder.Prompts.text(session, '¿Cómo te llamas?' +emoji.get('heart'));
+        builder.Prompts.text(session, '¿Cual es tu nombre?' +emoji.get('pray'));
     }
     else{
         next();//Pasamos al siguiente metodo de la cascada llamada next()
@@ -92,7 +92,7 @@ bot.dialog('/',[  // Primer dialogo o dialogo raìz, se crea dentro del bot
          
         bot.dialog('/preguntarAños', [ //método preguntar lugar
             function(session){// objeto llamado sesiòn
-                builder.Prompts.text(session, '¿Cuántos años tienes?' +emoji.get('heart'));
+                builder.Prompts.text(session, '¿Cuántos años tienes?' +emoji.get('100'));
             },
             function (session, results){
                 let Años = results.response;
